@@ -13,7 +13,7 @@ pipeline {
                     source /etc/profile
 
                     echo "${VERSION}"
-                    VERSION = '3.0.0'
+                    VERSION='3.0.0'
                     echo "${VERSION}"
 
 
@@ -34,7 +34,7 @@ pipeline {
                     echo '更新版本,替换URL'
 
                     echo "${VERSION}"
-                    VERSION = '4.0.0'
+                    VERSION='4.0.0'
                     echo "${VERSION}"
 
                     echo '请求kuboard提供的API'
