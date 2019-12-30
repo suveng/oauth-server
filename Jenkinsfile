@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    environment {
+        // 使用 returnStdout
+        OAUTH_VERSION = """${sh(
+                returnStdout: true,
+                script: 'cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo "[0-9.]+"'
+            )}"""
+    }
+
     stages {
         stage('maven build....') {
             steps {
@@ -26,9 +34,8 @@ pipeline {
             steps {
 
                 sh """
-                    def OAUTH_VERSION;
+
                     echo '更新版本,替换URL'
-                    OAUTH_VERSION=`cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'`
                     echo "${OAUTH_VERSION}"
 
                     echo '请求kuboard提供的API'
