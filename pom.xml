@@ -8,6 +8,7 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <!--必须group>artifact>version这样的顺序,否则影响自动化部署-->
     <groupId>qw.test</groupId>
     <artifactId>oauth-server</artifactId>
     <version>1.0.1</version>
