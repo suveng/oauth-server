@@ -8,13 +8,15 @@ pipeline {
         stage('maven build....') {
             steps {
                 sh '''
+                    OAUTH_VERSION='1.0.0'
                     echo '开始'
                     echo '更新环境变量'
                     source /etc/profile
 
-                    echo "${VERSION}"
-                    VERSION='3.0.0'
-                    echo "${VERSION}"
+                    echo "${OAUTH_VERSION}"
+                    OAUTH_VERSION='3.0.0'
+                    echo "${OAUTH_VERSION}"
+                    export OAUTH_VERSION
 
 
                     echo '登录harbor'
@@ -33,9 +35,9 @@ pipeline {
                 sh '''
                     echo '更新版本,替换URL'
 
-                    echo "${VERSION}"
-                    VERSION='4.0.0'
-                    echo "${VERSION}"
+                    echo "${OAUTH_VERSION}"
+                    OAUTH_VERSION='4.0.0'
+                    echo "${OAUTH_VERSION}"
 
                     echo '请求kuboard提供的API'
                 '''
