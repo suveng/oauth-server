@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        VERSION = '1.0.0'
+        OAUTH_VERSION = '1.0.0'
     }
     stages {
         stage('maven build....') {
