@@ -36,7 +36,7 @@ pipeline {
 
                     echo '请求kuboard提供的API'
 
-                    echo '{"spec":{"template":{"spec":{"containers":[{"name":"oauth","image":"192.168.9.233/qw.test/oauth-server:test-${OAUTH_VERSION}"}]}}}}"' > req.json
+                    echo '{"spec":{"template":{"spec":{"containers":[{"name":"oauth","image":"192.168.9.233/qw.test/oauth-server:test-${OAUTH_VERSION}"}]}}}}' > req.json
                     cat req.json
 
                     curl -X PATCH \
