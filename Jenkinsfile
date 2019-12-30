@@ -31,7 +31,7 @@ pipeline {
                 sh """
                     echo '更新版本,替换URL'
 
-                    env.OAUTH_VERSION=`cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'`
+                    ${env.OAUTH_VERSION}=`cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'`
                     echo "${env.OAUTH_VERSION}"
 
                     echo '请求kuboard提供的API'
