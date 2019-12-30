@@ -31,12 +31,12 @@ pipeline {
                 sh """
                     echo '更新版本,替换URL'
 
-                    ${OAUTH_VERSION}=`cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'`
-                    echo "${OAUTH_VERSION}"
+                    env.OAUTH_VERSION=`cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'`
+                    echo "${env.OAUTH_VERSION}"
 
                     echo '请求kuboard提供的API'
 
-                    echo '{"spec":{"template":{"spec":{"containers":[{"name":"oauth","image":"192.168.9.233/qw.test/oauth-server:test-${OAUTH_VERSION}"}]}}}}"' > req.json
+                    echo '{"spec":{"template":{"spec":{"containers":[{"name":"oauth","image":"192.168.9.233/qw.test/oauth-server:test-${env.OAUTH_VERSION}"}]}}}}"' > req.json
                     cat req.json
 
 
