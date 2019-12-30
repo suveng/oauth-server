@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        OAUTH_VERSION = `cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'`
+        OAUTH_VERSION = sh "cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo '[0-9.]+'"
     }
     stages {
         stage('maven build....') {
