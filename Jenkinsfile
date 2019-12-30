@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // 使用 returnStdout
-        OAUTH_VERSION="""${sh(returnStdout: true,script: 'cat pom.xml | grep oauth-server -A 1 | grep version | grep -Eo "[0-9.]+"')}"""
+        OAUTH_VERSION="""${sh(returnStdout: true,script: 'grep -A 1 oauth-server pom.xml  | grep version | grep  -m 1  -Eo "[0-9.]+" |tr "\n" " "')}"""
     }
 
     stages {
