@@ -1,0 +1,23 @@
+server:
+  port: 30115
+  servlet:
+    context-path: /oauth
+feign:
+  client:
+    config:
+      # 这里配置feign全局配置
+      default: #默认,可以配置具体的feign,比如commision
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: full
+  httpclient:
+    disable-ssl-validation: true
+  # 禁用hystrix
+  hystrix:
+    enabled: true
+  # 请求体启用压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
