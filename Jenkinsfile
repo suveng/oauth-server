@@ -18,7 +18,7 @@ pipeline {
                     docker login 192.168.9.233 -u admin -p Harbor12345
 
                     echo '执行maven build,打包成jar,test环境'
-                    #mvn clean package install -Dmaven.test.skip=true -DpushImage -Ptest
+                    mvn clean package install -Dmaven.test.skip=true -DpushImage -Ptest
 
                     echo '完成'
 
