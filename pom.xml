@@ -10,7 +10,7 @@
     </parent>
     <groupId>qw.test</groupId>
     <artifactId>oauth-server</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>oauth-server</name>
     <description>5.oauth</description>
 
