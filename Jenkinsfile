@@ -35,6 +35,9 @@ pipeline {
                     echo "${OAUTH_VERSION}"
 
                     echo '请求kuboard提供的API'
+
+                    request_data={"spec":{"template":{"spec":{"containers":[{"name":"oauth","image":"192.168.9.233/qw.test/oauth-server:test-${OAUTH_VERSION}"}]}}}}
+                    echo ${request_data}
                 '''
             }
         }
