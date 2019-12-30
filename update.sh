@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-git push origin develop
+git push github develop
 
 git push gitea develop
 
-git push origin --tag
+git push github --tag
 
 git push gitea --tag
 
