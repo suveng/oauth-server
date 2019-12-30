@@ -23,6 +23,7 @@ pipeline {
             }
         }
         stage('k8s部署') {
+            def OAUTH_VERSION;
             steps {
 
                 sh """
