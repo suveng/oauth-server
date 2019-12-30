@@ -11,7 +11,7 @@
     <!--必须group>artifact>version这样的顺序,否则影响自动化部署-->
     <groupId>qw.test</groupId>
     <artifactId>oauth-server</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <name>oauth-server</name>
     <description>5.oauth</description>
 
